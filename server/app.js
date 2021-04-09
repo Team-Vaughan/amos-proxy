@@ -39,7 +39,8 @@ app.get('/photos', async (req, res) => {
 
 app.get('/summary', async (req, res) => {
   try {
-    const response = await axios.get('https://summarybundle-mockairbnb.s3-us-west-2.amazonaws.com/summary.js');
+    // const response = await axios.get('https://summarybundle-mockairbnb.s3-us-west-2.amazonaws.com/summary.js');
+    const response = await axios.get('http://localhost:5002/summary.js');
     res.send(response.data);
   } catch (err) {
     console.error(err);
@@ -104,7 +105,8 @@ app.get('/rooms/:id/minNightlyRate', async (req, res) => {
 
 app.get('/rooms/:id/summary', async (req, res) => {
   try {
-    const response = await axios.get(`http://ec2-54-149-117-186.us-west-2.compute.amazonaws.com:5002/rooms/${req.params.id}/summary`);
+    // const response = await axios.get(`http://ec2-54-149-117-186.us-west-2.compute.amazonaws.com:5002/rooms/${req.params.id}/summary`);
+    const response = await axios.get(`http://5002/rooms/${req.params.id}/summary`);
     res.send(response.data);
   } catch (err) {
     res.send(fallback.summary);
