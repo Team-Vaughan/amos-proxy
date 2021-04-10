@@ -40,7 +40,7 @@ app.get('/photos', async (req, res) => {
 app.get('/summary', async (req, res) => {
   try {
     // const response = await axios.get('https://summarybundle-mockairbnb.s3-us-west-2.amazonaws.com/summary.js');
-    const response = await axios.get('http://localhost:5002/summary.js');
+    const response = await axios.get('https://sdc-summary-service.s3.us-east-2.amazonaws.com/summary/summary.js');
     res.send(response.data);
   } catch (err) {
     console.error(err);

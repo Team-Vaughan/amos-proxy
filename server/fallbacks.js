@@ -198,6 +198,7 @@ const summary = {
   'numBaths': 1,
   'numBeds': 1,
   'numBedrooms': 4,
+  'hostName': 'Simba Jones',
   '_id': '602c68795e4c664eb4dfe343'
 };
 
