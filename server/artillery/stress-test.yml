@@ -1,0 +1,17 @@
+config:
+  target: "http://localhost:5000"
+  phases:
+    - duration: 30
+      arrivalRate: 5
+      name: Warm up
+    - duration: 60
+      arrivalRate: 300
+  payload:
+    path: "ids.csv"
+    fields:
+      - "id"
+scenarios:
+  - name: "Get summary by stay Id"
+    flow:
+      - get:
+          url: "/rooms/{{ id }}/"

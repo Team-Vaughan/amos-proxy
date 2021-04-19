@@ -10,13 +10,16 @@
   "scripts": {
     "start": "nodemon server/server.js",
     "build": "NODE_ENV=production webpack",
-    "client-dev": "NODE_ENV=development webpack -w"
+    "client-dev": "NODE_ENV=development webpack -w",
+    "stress-test": " $(npm bin)/artillery run ./server/artillery/stress-test.yml"
   },
   "dependencies": {
+    "artillery": "^1.6.2",
     "axios": "^0.21.1",
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
     "file-loader": "^6.2.0",
+    "newrelic": "^7.3.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   },
